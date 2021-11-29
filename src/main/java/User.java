@@ -1,6 +1,10 @@
 public class User extends Thread {
+    private final Box box;
     final static int TIMING = 10000;
-    private final Box box = Box.get();
+
+    public User(Box box) {
+        this.box = box;
+    }
 
     @Override
     public void run() {

@@ -1,6 +1,10 @@
 public class CatInBox extends Thread {
-    Box box = Box.get();
+    private final Box box;
     final static int TIMING = 2000;
+
+    public CatInBox(Box box) {
+        this.box = box;
+    }
 
     @Override
     public void run() {

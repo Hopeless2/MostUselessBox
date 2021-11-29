@@ -1,13 +1,7 @@
 public class Box {
-    public static volatile boolean lever;
-    private static Box instance = null;
+    public volatile boolean lever;
 
-    private Box() {
-    }
-
-    public static Box get() {
-        if (instance == null) instance = new Box();
-        return instance;
+    public Box() {
     }
 
     public boolean getLever() {
