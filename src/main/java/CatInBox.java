@@ -1,0 +1,24 @@
+public class CatInBox extends Thread {
+    Box box = Box.get();
+    final static int TIMING = 2000;
+
+    @Override
+    public void run() {
+        while (true) {
+            if (isInterrupted()) return;
+            if (box.getLever()) {
+                try {
+                    Thread.sleep(TIMING);
+                    System.out.println("Коробка медленно открывается");
+                    Thread.sleep(TIMING);
+                    System.out.println("Из коробки вылез котик и потянул рычажок вниз");
+                    box.downLever();
+                    Thread.sleep(TIMING);
+                    System.out.println("Коробка медленно закрывается");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
